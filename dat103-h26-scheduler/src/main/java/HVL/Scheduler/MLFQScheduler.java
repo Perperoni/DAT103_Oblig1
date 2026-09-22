@@ -73,20 +73,24 @@ public class MLFQScheduler implements Scheduler {
                 return;
             }
             selected.start();
+        } else  {
+            selected.start();
         }
-        int TIME_PASSED = selected.getSize() - selected.getRemaining();
-        if (TIME_PASSED == QUANTUM) {
-            addTask(selected);
-            selected.stop();
-            selected = null;
-            scheduled();
-        } else {
+
+        int TIME_PASSED =  selected.getSize() - selected.getRemaining();
+        System.out.println(selected.getId() + ": " + selected.getRemaining());
+
+        if (TIME_PASSED <= QUANTUM) {
             if (selected.isDone()) {
                 selected.stop();
-                selected = null;
-                scheduled();
+                selected = q1.poll();
             }
+        } else {
+            q2.add(selected);
+            selected.stop();
+            selected = q1.poll();
         }
+
     }
 
     private void FCFSQueue() {
