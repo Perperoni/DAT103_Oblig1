@@ -16,7 +16,7 @@ public class SimulationTest {
 
 	Map<Integer, List<Task>> arrivals;
 	Simulation simulation;
-	private Integer test=1;  // DO NOT change this for Subtasks 1 and 2(a)
+	private Integer test=2;  // DO NOT change this for Subtasks 1 and 2(a)
 	// ONLY change the value from 1 to 2 for Subtask 2(b).
 
 	@BeforeEach
@@ -177,8 +177,57 @@ public class SimulationTest {
 				// Subtask 2(b): Write out expected view for 48 steps of Multi-level feedback scheduling
 				// Assert Test 2
 				assertThat(steps, contains(
+						"T=0 Scheduled: T1 Ready: ",
+						"T=1 Scheduled: T1 Ready: T2",
+						"T=2 Scheduled: T1 Ready: T2, T3",
+						"T=3 Scheduled: T1 Ready: T2, T3",
+						"T=4 Scheduled: T2 Ready: T3, T4, T1",
+						"T=5 Scheduled: T2 Ready: T3, T4, T5, T1",
+						"T=6 Scheduled: T2 Ready: T3, T4, T5, T1",
+						"T=7 Scheduled: T2 Ready: T3, T4, T5, T1",
+						"T=8 Scheduled: T3 Ready: T4, T5, T1, T2",
+						"T=9 Scheduled: T3 Ready: T4, T5, T1, T2",
+						"T=10 Scheduled: T3 Ready: T4, T5, T1, T2",
+						"T=11 Scheduled: T3 Ready: T4, T5, T1, T2",
+						"T=12 Scheduled: T4 Ready: T5, T6, T1, T2, T3",
+						"T=13 Scheduled: T5 Ready: T6, T1, T2, T3",
+						"T=14 Scheduled: T5 Ready: T6, T7, T1, T2, T3",
+						"T=15 Scheduled: T5 Ready: T6, T7, T1, T2, T3",
+						"T=16 Scheduled: T5 Ready: T6, T7, T8, T1, T2, T3",
+						"T=17 Scheduled: T6 Ready: T7, T8, T1, T2, T3",
+						"T=18 Scheduled: T6 Ready: T7, T8, T9, T1, T2, T3",
+						"T=19 Scheduled: T6 Ready: T7, T8, T9, T1, T2, T3",
+						"T=20 Scheduled: T6 Ready: T7, T8, T9, T10, T1, T2, T3",
+						"T=21 Scheduled: T7 Ready: T8, T9, T10, T1, T2, T3",
+						"T=22 Scheduled: T7 Ready: T8, T9, T10, T1, T2, T3",
+						"T=23 Scheduled: T7 Ready: T8, T9, T10, T1, T2, T3",
+						"T=24 Scheduled: T7 Ready: T8, T9, T10, T1, T2, T3",
+						"T=25 Scheduled: T8 Ready: T9, T10, T1, T2, T3",
+						"T=26 Scheduled: T8 Ready: T9, T10, T1, T2, T3",
+						"T=27 Scheduled: T8 Ready: T9, T10, T1, T2, T3",
+						"T=28 Scheduled: T8 Ready: T9, T10, T1, T2, T3",
+						"T=29 Scheduled: T9 Ready: T10, T1, T2, T3",
+						"T=30 Scheduled: T9 Ready: T10, T1, T2, T3",
+						"T=31 Scheduled: T9 Ready: T10, T1, T2, T3",
+						"T=32 Scheduled: T9 Ready: T10, T1, T2, T3",
+						"T=33 Scheduled: T10 Ready: T1, T2, T3",
+						"T=34 Scheduled: T10 Ready: T1, T2, T3",
+						"T=35 Scheduled: T10 Ready: T1, T2, T3",
+						"T=36 Scheduled: T10 Ready: T1, T2, T3",
+						"T=37 Scheduled: T1 Ready: T2, T3",
+						"T=38 Scheduled: T1 Ready: T2, T3",
+						"T=39 Scheduled: T1 Ready: T2, T3",
+						"T=40 Scheduled: T2 Ready: T3",
+						"T=41 Scheduled: T3 Ready: ",
+						"T=42 Scheduled: T3 Ready: ",
+						"T=43 Scheduled: T3 Ready: ",
+						"T=44 Scheduled: T3 Ready: ",
+						"T=45 Scheduled: T3 Ready: ",
+						"T=46 Scheduled: T3 Ready: ",
+						"T=47 Scheduled: Ready: "
 
 				));
+				break;
 		}
 	}
 }

@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="HVL.Scheduler.SimulationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-25T10:56:55.976Z" hostname="MARTIN" time="0.065">
+<testsuite name="HVL.Scheduler.SimulationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-25T11:16:09.405Z" hostname="MARTIN" time="0.047">
   <properties/>
-  <testcase name="testFCFS()" classname="HVL.Scheduler.SimulationTest" time="0.042"/>
-  <testcase name="testMLFQ()" classname="HVL.Scheduler.SimulationTest" time="0.021"/>
-  <system-out><![CDATA[1: 5
-2: 3
-3: 1
-4: 1
-5: 4
-6: 6
-7: 4
-8: 2
-9: 1
-10: 3
-1: 5
-6: 6
-]]></system-out>
+  <testcase name="testFCFS()" classname="HVL.Scheduler.SimulationTest" time="0.023"/>
+  <testcase name="testMLFQ()" classname="HVL.Scheduler.SimulationTest" time="0.022"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
