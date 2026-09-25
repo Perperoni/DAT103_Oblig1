@@ -59,37 +59,38 @@ public class MLFQScheduler implements Scheduler {
     // Subtask 2(a): Complete the implementation of Multilevel feedback queue
     @Override
     public void schedule() {
-        if (q1.isEmpty()) {
-            FCFSQueue();
-        }
 
-        RRQueue();
-    }
-
-    private void RRQueue() {
         if (selected == null) {
-            selected = q1.poll();
+            if (q1.isEmpty()) {
+                selected = q2.poll();
+            } else {
+                selected = q1.poll();
+            }
             if (selected == null) {
                 return;
             }
             selected.start();
-        } else  {
-            selected.start();
         }
+        if (q1.isEmpty()) {
+            FCFSQueue();
+        } else {
+            RRQueue();
+        }
+    }
+
+    private void RRQueue() {
 
         int TIME_PASSED = selected.getSize() - selected.getRemaining();
-        System.out.println(selected.getId() + ": " + selected.getRemaining());
 
-        if (TIME_PASSED >= QUANTUM) {
+        if (selected.isDone()) {
+            selected.stop();
+            selected = null;
+            schedule();
+        } else if (TIME_PASSED >= QUANTUM) {
             q2.add(selected);
             selected.stop();
-            selected = q1.poll();
-
-        } else {
-            if (selected.isDone()) {
-                selected.stop();
-                selected = q1.poll();
-            }
+            selected = null;
+            schedule();
         }
 
     }

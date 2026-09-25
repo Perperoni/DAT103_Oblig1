@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.072s</div>
+<div class="counter">0.063s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">50%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,115 +61,12 @@
 <div class="tab-container">
 <ul class="tabLinks">
 <li>
-<a href="#">Failed tests</a>
-</li>
-<li>
 <a href="#">Tests</a>
 </li>
 <li>
 <a href="#">Standard output</a>
 </li>
 </ul>
-<div class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="testMLFQ()"></a>
-<h3 class="failures">testMLFQ()</h3>
-<span class="code">
-<pre>java.lang.AssertionError: 
-Expected: iterable containing [&quot;T=0 Scheduled: T1 Ready: T2, T3&quot;, &quot;T=1 Scheduled: T1 Ready: T2, T3&quot;, &quot;T=2 Scheduled: T1 Ready: T2, T3, T4, T5&quot;, &quot;T=3 Scheduled: T1 Ready: T2, T3, T4, T5&quot;, &quot;T=4 Scheduled: T2 Ready: T3, T4, T5, T1&quot;, &quot;T=5 Scheduled: T2 Ready: T3, T4, T5, T1&quot;, &quot;T=6 Scheduled: T2 Ready: T3, T4, T5, T6, T7, T1&quot;, &quot;T=7 Scheduled: T3 Ready: T4, T5, T6, T7, T1&quot;, &quot;T=8 Scheduled: T4 Ready: T5, T6, T7, T1&quot;, &quot;T=9 Scheduled: T5 Ready: T6, T7, T1&quot;, &quot;T=10 Scheduled: T5 Ready: T6, T7, T8, T1&quot;, &quot;T=11 Scheduled: T5 Ready: T6, T7, T8, T1&quot;, &quot;T=12 Scheduled: T5 Ready: T6, T7, T8, T1&quot;, &quot;T=13 Scheduled: T6 Ready: T7, T8, T1&quot;, &quot;T=14 Scheduled: T6 Ready: T7, T8, T1&quot;, &quot;T=15 Scheduled: T6 Ready: T7, T8, T1&quot;, &quot;T=16 Scheduled: T6 Ready: T7, T8, T9, T10, T1&quot;, &quot;T=17 Scheduled: T7 Ready: T8, T9, T10, T1, T6&quot;, &quot;T=18 Scheduled: T7 Ready: T8, T9, T10, T1, T6&quot;, &quot;T=19 Scheduled: T7 Ready: T8, T9, T10, T1, T6&quot;, &quot;T=20 Scheduled: T7 Ready: T8, T9, T10, T1, T6&quot;, &quot;T=21 Scheduled: T8 Ready: T9, T10, T1, T6&quot;, &quot;T=22 Scheduled: T8 Ready: T9, T10, T1, T6&quot;, &quot;T=23 Scheduled: T9 Ready: T10, T1, T6&quot;, &quot;T=24 Scheduled: T10 Ready: T1, T6&quot;, &quot;T=25 Scheduled: T10 Ready: T1, T6&quot;, &quot;T=26 Scheduled: T10 Ready: T1, T6&quot;, &quot;T=27 Scheduled: T1 Ready: T6&quot;, &quot;T=28 Scheduled: T6 Ready: &quot;, &quot;T=29 Scheduled: T6 Ready: &quot;]
-     but: item 7: was &quot;T=7 Scheduled: T2 Ready: T3, T4, T5, T6, T7, T1&quot;
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
-	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at HVL.Scheduler.SimulationTest.testMLFQ(SimulationTest.java:135)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
-	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
-</div>
 <div class="tab">
 <h2>Tests</h2>
 <table>
@@ -182,49 +79,31 @@ Expected: iterable containing [&quot;T=0 Scheduled: T1 Ready: T2, T3&quot;, &quo
 </thead>
 <tr>
 <td class="success">testFCFS()</td>
-<td class="success">0.040s</td>
+<td class="success">0.042s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">testMLFQ()</td>
-<td class="failures">0.032s</td>
-<td class="failures">failed</td>
+<td class="success">testMLFQ()</td>
+<td class="success">0.021s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
 <div class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>1: 0
-1: 1
-1: 2
-1: 3
-1: 4
-2: 0
-2: 1
-2: 2
+<pre>1: 5
 2: 3
-3: 0
 3: 1
-4: 0
 4: 1
-5: 0
-5: 1
-5: 2
-5: 3
 5: 4
-6: 0
-6: 1
-6: 2
-6: 3
-6: 4
-7: 0
-7: 1
-7: 2
-7: 3
+6: 6
 7: 4
-8: 0
-8: 1
+8: 2
+9: 1
+10: 3
+1: 5
+6: 6
 </pre>
 </span>
 </div>
@@ -236,7 +115,7 @@ Expected: iterable containing [&quot;T=0 Scheduled: T1 Ready: T2, T3&quot;, &quo
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.14.3</a> at 25. sep. 2026, 12:18:34</p>
+<a href="https://www.gradle.org">Gradle 8.14.3</a> at 25. sep. 2026, 12:56:56</p>
 </div>
 </div>
 </body>
