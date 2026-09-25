@@ -77,18 +77,19 @@ public class MLFQScheduler implements Scheduler {
             selected.start();
         }
 
-        int TIME_PASSED =  selected.getSize() - selected.getRemaining();
+        int TIME_PASSED = selected.getSize() - selected.getRemaining();
         System.out.println(selected.getId() + ": " + selected.getRemaining());
 
-        if (TIME_PASSED <= QUANTUM) {
+        if (TIME_PASSED >= QUANTUM) {
+            q2.add(selected);
+            selected.stop();
+            selected = q1.poll();
+
+        } else {
             if (selected.isDone()) {
                 selected.stop();
                 selected = q1.poll();
             }
-        } else {
-            q2.add(selected);
-            selected.stop();
-            selected = q1.poll();
         }
 
     }
