@@ -59,7 +59,15 @@ public class MLFQScheduler implements Scheduler {
     // Subtask 2(a): Complete the implementation of Multilevel feedback queue
     @Override
     public void schedule() {
-
+        //System.out.println(this.time.getAsInt());
+        this.timestamp = time.getAsInt();
+        if (!q2.isEmpty()) {
+            int TIME_WAITED = timestamp - q2EntryTime.get(q2.peek()).intValue();
+            //System.out.println(TIME_WAITED);
+            if (TIME_WAITED >= AGING_THRESHOLD) {
+                q1.add(q2.poll());
+            }
+        }
         if (selected == null) {
             if (q1.isEmpty()) {
                 selected = q2.poll();
@@ -87,6 +95,7 @@ public class MLFQScheduler implements Scheduler {
             selected = null;
             schedule();
         } else if (TIME_PASSED >= QUANTUM) {
+            q2EntryTime.put(selected, timestamp);
             q2.add(selected);
             selected.stop();
             selected = null;
