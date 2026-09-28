@@ -147,9 +147,9 @@ public class SimulationTest {
 						"T=11 Scheduled: T5 Ready: T6, T7, T8, T1",
 						"T=12 Scheduled: T5 Ready: T6, T7, T8, T1",
 						"T=13 Scheduled: T6 Ready: T7, T8, T1",
-						"T=14 Scheduled: T6 Ready: T7, T8, T1",
-						"T=15 Scheduled: T6 Ready: T7, T8, T1",
-						"T=16 Scheduled: T6 Ready: T7, T8, T9, T10, T1",
+						"T=14 Scheduled: T6 Ready: T7, T8, T1", // T1 har vert i Q2 i meir enn 11 time quants
+						"T=15 Scheduled: T6 Ready: T7, T8, T1", // T1 flytts til back of Q1
+						"T=16 Scheduled: T6 Ready: T7, T8, T9, T10, T1", //her kan skal T1 vere framfor T9
 						"T=17 Scheduled: T7 Ready: T8, T9, T10, T1, T6",
 						"T=18 Scheduled: T7 Ready: T8, T9, T10, T1, T6",
 						"T=19 Scheduled: T7 Ready: T8, T9, T10, T1, T6",
