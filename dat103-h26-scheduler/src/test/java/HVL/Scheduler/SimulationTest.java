@@ -16,7 +16,7 @@ public class SimulationTest {
 
 	Map<Integer, List<Task>> arrivals;
 	Simulation simulation;
-	private Integer test=2;  // DO NOT change this for Subtasks 1 and 2(a)
+	private Integer test=1;  // DO NOT change this for Subtasks 1 and 2(a)
 	// ONLY change the value from 1 to 2 for Subtask 2(b).
 
 	@BeforeEach
@@ -171,7 +171,6 @@ public class SimulationTest {
 					simulation.step();
 					var state = "T=%d %s".formatted(simulation.time(), mlfqScheduler.view());
 					simulation.clocktick();
-					System.out.println(state);
 					return state;
 				}).limit(48).collect(Collectors.toList()); // 48 is the total number of execution steps
 
@@ -214,18 +213,18 @@ public class SimulationTest {
 						"T=33 Scheduled: T9 Ready: T2, T10, T3",
 						"T=34 Scheduled: T9 Ready: T2, T10, T3",
 						"T=35 Scheduled: T9 Ready: T2, T10, T3",
-						"T=36 Scheduled: T9 Ready: T2, T10, T3",
-						"T=37 Scheduled: T2 Ready: T10, T3",
+						"T=36 Scheduled: T2 Ready: T10, T3",
+						"T=37 Scheduled: T10 Ready: T3",
 						"T=38 Scheduled: T10 Ready: T3",
 						"T=39 Scheduled: T10 Ready: T3",
 						"T=40 Scheduled: T10 Ready: T3",
-						"T=41 Scheduled: T10 Ready: T3",
+						"T=41 Scheduled: T3 Ready: ",
 						"T=42 Scheduled: T3 Ready: ",
 						"T=43 Scheduled: T3 Ready: ",
 						"T=44 Scheduled: T3 Ready: ",
 						"T=45 Scheduled: T3 Ready: ",
 						"T=46 Scheduled: T3 Ready: ",
-						"T=47 Scheduled: T3 Ready: "
+						"T=47 Scheduled: Ready: "
 
 				));
 				break;

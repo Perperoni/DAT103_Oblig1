@@ -60,9 +60,8 @@ public class MLFQScheduler implements Scheduler {
     @Override
     public void schedule() {
         //System.out.println(this.time.getAsInt());
-        this.timestamp = time.getAsInt();
         if (!q2.isEmpty()) {
-            int TIME_WAITED = timestamp - q2EntryTime.get(q2.peek()).intValue();
+            int TIME_WAITED = time.getAsInt() - q2EntryTime.get(q2.peek()).intValue();
             //System.out.println(TIME_WAITED);
             if (TIME_WAITED >= AGING_THRESHOLD) {
                 q1.add(q2.poll());
@@ -77,6 +76,7 @@ public class MLFQScheduler implements Scheduler {
             if (selected == null) {
                 return;
             }
+            timestamp = time.getAsInt() + QUANTUM;
             selected.start();
         }
         if (q1.isEmpty()) {
@@ -88,19 +88,18 @@ public class MLFQScheduler implements Scheduler {
 
     private void RRQueue() {
 
-        int TIME_PASSED = selected.getSize() - selected.getRemaining();
-
         if (selected.isDone()) {
             selected.stop();
             selected = null;
             schedule();
-        } else if (TIME_PASSED >= QUANTUM) {
+        } else if (time.getAsInt() >= timestamp) {
             q2EntryTime.put(selected, timestamp);
             q2.add(selected);
             selected.stop();
             selected = null;
             schedule();
         }
+
 
     }
 
