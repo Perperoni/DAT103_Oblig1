@@ -171,6 +171,7 @@ public class SimulationTest {
 					simulation.step();
 					var state = "T=%d %s".formatted(simulation.time(), mlfqScheduler.view());
 					simulation.clocktick();
+					System.out.println(state);
 					return state;
 				}).limit(48).collect(Collectors.toList()); // 48 is the total number of execution steps
 
@@ -191,40 +192,40 @@ public class SimulationTest {
 						"T=11 Scheduled: T3 Ready: T4, T5, T1, T2",
 						"T=12 Scheduled: T4 Ready: T5, T6, T1, T2, T3",
 						"T=13 Scheduled: T5 Ready: T6, T1, T2, T3",
-						"T=14 Scheduled: T5 Ready: T6, T7, T1, T2, T3",
+						"T=14 Scheduled: T5 Ready: T6, T7, T1, T2, T3", //T1 has waited 11 here
 						"T=15 Scheduled: T5 Ready: T6, T7, T1, T2, T3",
-						"T=16 Scheduled: T5 Ready: T6, T7, T8, T1, T2, T3",
-						"T=17 Scheduled: T6 Ready: T7, T8, T1, T2, T3",
-						"T=18 Scheduled: T6 Ready: T7, T8, T9, T1, T2, T3",
-						"T=19 Scheduled: T6 Ready: T7, T8, T9, T1, T2, T3",
-						"T=20 Scheduled: T6 Ready: T7, T8, T9, T10, T1, T2, T3",
-						"T=21 Scheduled: T7 Ready: T8, T9, T10, T1, T2, T3",
-						"T=22 Scheduled: T7 Ready: T8, T9, T10, T1, T2, T3",
-						"T=23 Scheduled: T7 Ready: T8, T9, T10, T1, T2, T3",
-						"T=24 Scheduled: T7 Ready: T8, T9, T10, T1, T2, T3",
-						"T=25 Scheduled: T8 Ready: T9, T10, T1, T2, T3",
-						"T=26 Scheduled: T8 Ready: T9, T10, T1, T2, T3",
-						"T=27 Scheduled: T8 Ready: T9, T10, T1, T2, T3",
-						"T=28 Scheduled: T8 Ready: T9, T10, T1, T2, T3",
-						"T=29 Scheduled: T9 Ready: T10, T1, T2, T3",
-						"T=30 Scheduled: T9 Ready: T10, T1, T2, T3",
-						"T=31 Scheduled: T9 Ready: T10, T1, T2, T3",
-						"T=32 Scheduled: T9 Ready: T10, T1, T2, T3",
-						"T=33 Scheduled: T10 Ready: T1, T2, T3",
-						"T=34 Scheduled: T10 Ready: T1, T2, T3",
-						"T=35 Scheduled: T10 Ready: T1, T2, T3",
-						"T=36 Scheduled: T10 Ready: T1, T2, T3",
-						"T=37 Scheduled: T1 Ready: T2, T3",
-						"T=38 Scheduled: T1 Ready: T2, T3",
-						"T=39 Scheduled: T1 Ready: T2, T3",
-						"T=40 Scheduled: T2 Ready: T3",
-						"T=41 Scheduled: T3 Ready: ",
+						"T=16 Scheduled: T5 Ready: T6, T7, T1, T8, T2, T3",
+						"T=17 Scheduled: T6 Ready: T7, T1, T8, T2, T3",
+						"T=18 Scheduled: T6 Ready: T7, T1, T8, T9, T2, T3", // T2 waited 11 here
+						"T=19 Scheduled: T6 Ready: T7, T1, T8, T9, T2, T3",
+						"T=20 Scheduled: T6 Ready: T7, T1, T8, T9, T2, T10, T3",
+						"T=21 Scheduled: T7 Ready: T1, T8, T9, T2, T10, T3",
+						"T=22 Scheduled: T7 Ready: T1, T8, T9, T2, T10, T3", // T3 has waited for 11
+						"T=23 Scheduled: T7 Ready: T1, T8, T9, T2, T10, T3",
+						"T=24 Scheduled: T7 Ready: T1, T8, T9, T2, T10, T3",
+						"T=25 Scheduled: T1 Ready: T8, T9, T2, T10, T3",
+						"T=26 Scheduled: T1 Ready: T8, T9, T2, T10, T3",
+						"T=27 Scheduled: T1 Ready: T8, T9, T2, T10, T3",
+						"T=28 Scheduled: T8 Ready: T9, T2, T10, T3",
+						"T=29 Scheduled: T8 Ready: T9, T2, T10, T3",
+						"T=30 Scheduled: T8 Ready: T9, T2, T10, T3",
+						"T=31 Scheduled: T8 Ready: T9, T2, T10, T3",
+						"T=32 Scheduled: T9 Ready: T2, T10, T3",
+						"T=33 Scheduled: T9 Ready: T2, T10, T3",
+						"T=34 Scheduled: T9 Ready: T2, T10, T3",
+						"T=35 Scheduled: T9 Ready: T2, T10, T3",
+						"T=36 Scheduled: T9 Ready: T2, T10, T3",
+						"T=37 Scheduled: T2 Ready: T10, T3",
+						"T=38 Scheduled: T10 Ready: T3",
+						"T=39 Scheduled: T10 Ready: T3",
+						"T=40 Scheduled: T10 Ready: T3",
+						"T=41 Scheduled: T10 Ready: T3",
 						"T=42 Scheduled: T3 Ready: ",
 						"T=43 Scheduled: T3 Ready: ",
 						"T=44 Scheduled: T3 Ready: ",
 						"T=45 Scheduled: T3 Ready: ",
 						"T=46 Scheduled: T3 Ready: ",
-						"T=47 Scheduled: Ready: "
+						"T=47 Scheduled: T3 Ready: "
 
 				));
 				break;
