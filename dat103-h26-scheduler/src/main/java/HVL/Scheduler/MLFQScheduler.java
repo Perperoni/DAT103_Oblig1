@@ -69,21 +69,26 @@ public class MLFQScheduler implements Scheduler {
             }
         }
         if (selected == null) {
-            if (q1.isEmpty()) {
-                selected = q2.poll();
-            } else {
-                selected = q1.poll();
-            }
+            select();
             if (selected == null) {
                 return;
             }
             timestamp = time.getAsInt() + QUANTUM;
             selected.start();
         }
-        if (q1.isEmpty()) {
-            FCFSQueue();
-        } else {
+        if (selectedFromQ1) {
             RRQueue();
+        } else {
+            FCFSQueue();
+        }
+    }
+
+    private void select() {
+        selected = q1.poll();
+        selectedFromQ1 = true;
+        if (selected == null) {
+            selected = q2.poll();
+            selectedFromQ1 = false;
         }
     }
 

@@ -171,7 +171,6 @@ public class SimulationTest {
 					simulation.step();
 					var state = "T=%d %s".formatted(simulation.time(), mlfqScheduler.view());
 					simulation.clocktick();
-					System.out.println(state);
 					return state;
 				}).limit(48).collect(Collectors.toList()); // 48 is the total number of execution steps
 
