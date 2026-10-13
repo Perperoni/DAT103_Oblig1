@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< Updated upstream
 <testsuite name="HVL.Scheduler.SimulationTest" tests="2" skipped="0" failures="1" errors="0" timestamp="2026-09-28T11:58:04.957Z" hostname="158-37-236-170.hvl.no" time="0.014">
   <properties/>
   <testcase name="testFCFS()" classname="HVL.Scheduler.SimulationTest" time="0.009"/>
@@ -96,5 +97,13 @@ Expected: iterable containing [&quot;T=0 Scheduled: T1 Ready: T2, T3&quot;, &quo
 </failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>
+=======
+<testsuite name="HVL.Scheduler.SimulationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-28T13:06:54.072Z" hostname="MARTIN" time="0.06">
+  <properties/>
+  <testcase name="testFCFS()" classname="HVL.Scheduler.SimulationTest" time="0.044"/>
+  <testcase name="testMLFQ()" classname="HVL.Scheduler.SimulationTest" time="0.014"/>
+  <system-out><![CDATA[hit!
+]]></system-out>
+>>>>>>> Stashed changes
   <system-err><![CDATA[]]></system-err>
 </testsuite>

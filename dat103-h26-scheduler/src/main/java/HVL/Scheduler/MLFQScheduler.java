@@ -63,8 +63,9 @@ public class MLFQScheduler implements Scheduler {
         if (!q2.isEmpty()) {
             int TIME_WAITED = time.getAsInt() - q2EntryTime.get(q2.peek()).intValue();
             //System.out.println(TIME_WAITED);
-            if (TIME_WAITED >= AGING_THRESHOLD) {
+            if (TIME_WAITED > AGING_THRESHOLD) {
                 q1.add(q2.poll());
+                System.out.println("hit!");
             }
         }
         if (selected == null) {
