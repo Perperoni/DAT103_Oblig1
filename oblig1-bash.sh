@@ -32,3 +32,4 @@ awk '{
 
 cat ../result.txt && rm resulttemp.txt
 
+#bruk LF
